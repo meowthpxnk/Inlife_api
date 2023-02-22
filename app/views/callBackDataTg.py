@@ -1,7 +1,7 @@
 from flask import request
 import telebot
 
-from app import app, bot
+from app import app, bot, admin
 
 @app.route('/callback_data_tg', methods=["POST"])
 def callbackDataTelegram():
@@ -16,13 +16,13 @@ def callbackDataTelegram():
 
 # from app import admin
 
-# @app.route('/tg_admin_info', methods=["GET"])
-# def tg_admin_info():
-#     try:
-#         return {
-#             "info": f"{admin.state}"
-#         }
-#     except Exception as e:
-#         return {
-#             "error": e
-#         }
+@app.route('/tg_admin_info', methods=["GET"])
+def tg_admin_info():
+    try:
+        return {
+            "info": f"{admin.state}"
+        }
+    except Exception as e:
+        return {
+            "error": e
+        }
