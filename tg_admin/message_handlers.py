@@ -130,27 +130,33 @@ def exit_command(message):
 @admin_message_handler
 def get_message(message):
     # admin.send_answer(f"{admin}")
-    # admin.send_answer(f"{admin.state}")
-
-    if not admin.state:
-        admin.send_answer(start_message)
-        return
-
-    content_type = message.content_type
-
-    match content_type:
-        case "text":
-            admin.process_new_updates(message.text, content_type)
-            return
-        case "photo":
-            fileID = message.photo[-1].file_id
-            file = bot.get_file(fileID)
-            image = bot.download_file(file.file_path)
-            admin.process_new_updates(image, content_type)
-            return
-        case "document":
-            return
-        case _:
-            return
+    
     # admin.state.next_step()
     # bot.send_message(message.chat.id, '<b>получил текст</b>', parse_mode = "HTML")
+
+    try:
+        admin.send_answer(f"{admin.state = }")
+
+        if not admin.state:
+            admin.send_answer(start_message)
+            return
+
+        content_type = message.content_type
+
+        match content_type:
+            case "text":
+                admin.process_new_updates(message.text, content_type)
+                return
+            case "photo":
+                fileID = message.photo[-1].file_id
+                file = bot.get_file(fileID)
+                image = bot.download_file(file.file_path)
+                admin.process_new_updates(image, content_type)
+                return
+            case "document":
+                return
+            case _:
+                return
+    
+    except Exception as e:
+        admin.send_answer(f"{e}")
