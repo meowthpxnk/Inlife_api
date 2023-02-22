@@ -138,13 +138,6 @@ def get_message(message):
         mess = admin.state.method_name if admin.state else None
         admin.send_answer(f"{mess}")
         admin.send_answer(f"{id(admin)}")
-        admin.send_answer(f"{id(admin)}")
-        admin.send_answer(f"{id(admin)}")
-        admin.send_answer(f"{id(admin)}")
-        admin.send_answer(f"{id(admin)}")
-        admin.send_answer(f"{id(admin)}")
-        admin.send_answer(f"{id(admin)}")
-        admin.send_answer(f"{id(admin)}")
     except Exception as e:
         admin.send_answer(f"{e}")
 
