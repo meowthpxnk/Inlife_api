@@ -10,7 +10,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-TOKEN = "5855595896:AAHdnmM-u0PXDAsf0J3N5SbFJIaTIknfpC0"
+TOKEN = "6134027449:AAFn4SsiBsOeSWRWT58uBvOOYzlk-RWcRqM"
 bot = telebot.TeleBot(TOKEN)
 
 

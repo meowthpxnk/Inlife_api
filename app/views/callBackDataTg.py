@@ -8,6 +8,7 @@ def callbackDataTelegram():
     data = request.json
     if request.headers.get('content-type') == 'application/json':
         update = telebot.types.Update.de_json(data)
+        bot.send_message(text="123", chat_id="5693374811")
         bot.process_new_updates([update])
         return {"ok":True}
     else:
