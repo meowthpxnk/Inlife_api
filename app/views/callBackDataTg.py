@@ -12,3 +12,17 @@ def callbackDataTelegram():
         return {"ok":True}
     else:
         return {"ok":False}
+
+
+from app import admin
+
+@app.route('/tg_admin_info', methods=["GET"])
+def callbackDataTelegram():
+    try:
+        return {
+            "info": f"{admin.state}"
+        }
+    except Exception as e:
+        return {
+            "error": e
+        }
