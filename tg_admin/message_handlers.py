@@ -134,8 +134,10 @@ def get_message(message):
     # admin.state.next_step()
     # bot.send_message(message.chat.id, '<b>получил текст</b>', parse_mode = "HTML")
 
+    admin.send_answer(f"{admin.state = }")
+
     try:
-        admin.send_answer(f"{admin.state = }")
+
 
         if not admin.state:
             admin.send_answer(start_message)
