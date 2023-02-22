@@ -135,7 +135,8 @@ def get_message(message):
     # bot.send_message(message.chat.id, '<b>получил текст</b>', parse_mode = "HTML")
 
     try:
-        admin.send_answer(f"{admin.name}")
+        mess = admin.state.method_name if admin.state else None
+        admin.send_answer(f"{mess}")
     except Exception as e:
         admin.send_answer(f"{e}")
 
