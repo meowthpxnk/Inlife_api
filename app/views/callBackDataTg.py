@@ -17,7 +17,7 @@ def callbackDataTelegram():
 from app import admin
 
 @app.route('/tg_admin_info', methods=["GET"])
-def callbackDataTelegram():
+def tg_admin_info():
     try:
         return {
             "info": f"{admin.state}"
