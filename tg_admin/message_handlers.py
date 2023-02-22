@@ -129,8 +129,8 @@ def exit_command(message):
 @bot.message_handler(content_types=["text", "photo"])
 @admin_message_handler
 def get_message(message):
-    admin.send_answer(f"{admin}")
-    admin.send_answer(f"{admin.state}")
+    # admin.send_answer(f"{admin}")
+    # admin.send_answer(f"{admin.state}")
 
     if not admin.state:
         admin.send_answer(start_message)
