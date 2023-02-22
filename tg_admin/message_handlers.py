@@ -1,7 +1,8 @@
 from app import bot, admin
 from .reply_markups import *
 from .message_templates import *
-
+import requests
+import io
 
 
 def openPilImage(url):
