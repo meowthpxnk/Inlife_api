@@ -451,7 +451,7 @@ class State:
         else:
             self.finish()
 
-    def next_step_append(self):generateMethod
+    def next_step_append(self):
         try:
             self.dump_data[self.active_step().name].append(self.active_step().data)
         except:
