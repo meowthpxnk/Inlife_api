@@ -385,6 +385,8 @@ class OneMoreCreateDish(Step):
             )
         )
 
+        self.admin.generateMethod(self.method_name, self.dump_data)
+
     def parse_data(self, data, content_type = None):
         self.data = data
 
