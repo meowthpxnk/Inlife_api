@@ -396,7 +396,7 @@ class OneMoreCreateDish(Step):
                 self.reload()
                 return
             case "нет":
-                self.finish()
+                # self.finish()
                 return
             case _:
                 raise Exception
@@ -451,7 +451,7 @@ class State:
         else:
             self.finish()
 
-    def next_step_append(self):
+    def next_step_append(self):generateMethod
         try:
             self.dump_data[self.active_step().name].append(self.active_step().data)
         except:

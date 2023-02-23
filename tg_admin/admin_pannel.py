@@ -132,7 +132,7 @@ class TgAdmin():
                             ingredients = data['description'],
                             category_id = data['category_id']
                         )
-                        self.send_answer(dish)
+                        # self.send_answer(dish)
                     except Exception as e:
                         self.send_answer(e)
 
