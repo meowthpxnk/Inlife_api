@@ -129,7 +129,7 @@ class TgAdmin():
                             title = data["title"],
                             price = data["price"],
                             portion = data["portion"],
-                            ingredients = data['ingredients'],
+                            ingredients = data['description'],
                             category_id = data['category_id']
                         )
                         self.send_answer(dish)
