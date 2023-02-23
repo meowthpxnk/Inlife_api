@@ -394,7 +394,7 @@ class OneMoreCreateDish(Step):
         match data.lower():
             case "да":
                 self.admin.send_answer("123")
-                self.admin.generateMethod(self.method_name, self.dump_data)
+                self.admin.send_answer(f"{self.admin.__dir__()}")
                 self.admin.send_answer("123")
                 self.reload()
                 return
