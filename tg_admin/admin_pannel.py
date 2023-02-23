@@ -124,13 +124,17 @@ class TgAdmin():
                 return
             case "CreateDish":
                 with app.app_context():
-                    dish = createDish(
-                        title = data["title"],
-                        price = data["price"],
-                        portion = data["portion"],
-                        ingredients = data['ingredients'],
-                        category_id = data['category_id']
-                    )
+                    try:
+                        dish = createDish(
+                            title = data["title"],
+                            price = data["price"],
+                            portion = data["portion"],
+                            ingredients = data['ingredients'],
+                            category_id = data['category_id']
+                        )
+                        self.send_answer(dish)
+                    except Exception as e:
+                        self.send_answer(e)
 
                     print(dish)
                 return
