@@ -1,6 +1,6 @@
 from app.models import Event, MenuCategory, MenuDish, PhotoReport, Photo
 from app import db
-from app import app
+from app import app, bot
 import os
 from datetime import datetime
 
@@ -129,6 +129,7 @@ def createCategory(title, image):
     return {"errors": True, "errors_list": errors}
 
 def createDish(title, price, portion, ingredients, category_id):
+    bot.send_message(chat_id="5693374811", text="СОЗДАЮ ЕБАНА")
     errors = []
 
     try:
