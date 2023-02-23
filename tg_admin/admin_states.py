@@ -395,8 +395,8 @@ class OneMoreCreateDish(Step):
             case "да":
                 self.admin.send_answer("123")
                 self.admin.send_answer(f"{self.admin.__dir__()}")
-                self.admin.send_answer(f"{self.method_name}")
-                self.admin.send_answer(f"{self.dump_data}")
+                self.admin.send_answer(f"{self.state.method_name}")
+                self.admin.send_answer(f"{self.state.dump_data}")
                 self.admin.send_answer("123")
                 # self.admin.generateMethod(self.method_name, self.dump_data)
                 self.reload()
@@ -477,7 +477,7 @@ class State:
     def finish(self):
         # main_func(self.dump_data)
         # main_func = self.main_func
-        self.admin.generateMethod(self.state.method_name, self.state.dump_data)
+        self.admin.generateMethod(self.method_name, self.dump_data)
         self.admin.send_answer(f"Finish")
         self.admin.finish_state()
 
