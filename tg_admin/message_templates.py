@@ -1,8 +1,25 @@
 
 help_message = "<b>Доступные команды: </b>\n\n\
-<b>/createEvent</b> - создание мероприятия\n\
-<b>/createCategory</b> - создать категорию\n\n\
-<b>/edtiCategory</b> - редактировать категорию"
+\
+<b>Мероприятия</b>\n\
+<b>/createEvent</b> - создание\n\
+<b>/editEvent</b> - редактирование\n\
+<b>/deleteEvent</b> - удаление\n\n\
+\
+<b>Категории Блюд</b>\n\
+<b>/createCategory</b> - создание\n\
+<b>/editCategory</b> - редактирование\n\
+<b>/deleteCategory</b> - удаление\n\n\
+\
+<b>Блюда</b>\n\
+<b>/createDish</b> - создание\n\
+<b>/editDish</b> - редактирование\n\
+<b>/deleteDish</b> - удаление\n\n\
+\
+<b>Фото-отчеты</b>\n\
+<b>/createPhotoReport</b> - создание\n\
+<b>/editPhotoReport</b> - редактирование\n\
+<b>/deletePhotoReport</b> - удаление"
 
 error_message = "У вас нет прав на использование этого бота"
 
