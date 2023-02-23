@@ -41,23 +41,36 @@ def help_command(message):
 def start_command(message):
     bot.send_message(message.chat.id, 'ХЭЛП2', reply_markup = defaultMarkup)
 
+
+
+# --- РАБОТАЕТ
 @bot.message_handler(commands=['createEvent'])
 @admin_message_handler
 @is_admin_has_active_state
 def create_event_command(message):
     admin.createEvent()
 
+# --- РАБОТАЕТ
 @bot.message_handler(commands=['createCategory'])
 @admin_message_handler
 @is_admin_has_active_state
 def create_category_command(message):
     admin.createCategory()
 
+# --- РАБОТАЕТ
+@bot.message_handler(commands=['createPhotoReport'])
+@admin_message_handler
+@is_admin_has_active_state
+def create_dish_command(message):
+    admin.createPhotoReport()
+
 @bot.message_handler(commands=['createDish'])
 @admin_message_handler
 @is_admin_has_active_state
 def create_dish_command(message):
     admin.createDish()
+
+
 
 @bot.message_handler(commands=['editEvent'])
 @admin_message_handler
@@ -76,13 +89,6 @@ def create_dish_command(message):
 @is_admin_has_active_state
 def create_dish_command(message):
     admin.editCategory()
-
-
-@bot.message_handler(commands=['createPhotoReport'])
-@admin_message_handler
-@is_admin_has_active_state
-def create_dish_command(message):
-    admin.createPhotoReport()
 
 @bot.message_handler(commands=['editPhotoReport'])
 @admin_message_handler
@@ -134,12 +140,12 @@ def get_message(message):
     # admin.state.next_step()
     # bot.send_message(message.chat.id, '<b>получил текст</b>', parse_mode = "HTML")
 
-    try:
-        mess = admin.state.method_name if admin.state else None
-        admin.send_answer(f"{mess}")
-        admin.send_answer(f"{id(admin)}")
-    except Exception as e:
-        admin.send_answer(f"{e}")
+    # try:
+    #     mess = admin.state.method_name if admin.state else None
+    #     admin.send_answer(f"{mess}")
+    #     admin.send_answer(f"{id(admin)}")
+    # except Exception as e:
+    #     admin.send_answer(f"{e}")
 
     try:
 
