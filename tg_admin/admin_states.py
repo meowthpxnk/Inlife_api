@@ -477,7 +477,7 @@ class State:
     def finish(self):
         # main_func(self.dump_data)
         # main_func = self.main_func
-        self.admin.generateMethod(self.method_name, self.dump_data)
+        self.admin.generateMethod(self.state.method_name, self.state.dump_data)
         self.admin.send_answer(f"Finish")
         self.admin.finish_state()
 
