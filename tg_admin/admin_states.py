@@ -396,6 +396,7 @@ class OneMoreCreateDish(Step):
                 self.reload()
                 return
             case "нет":
+                self.finish()
                 return
             case _:
                 raise Exception
