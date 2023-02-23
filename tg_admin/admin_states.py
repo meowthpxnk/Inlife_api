@@ -383,9 +383,7 @@ class OneMoreCreateDish(Step):
                 name = "one_more",
                 reply_markup = yes_or_not_markup,
             )
-        )
-
-        self.admin.generateMethod(self.method_name, self.dump_data)
+        ) 
 
     def parse_data(self, data, content_type = None):
         self.data = data
@@ -395,6 +393,9 @@ class OneMoreCreateDish(Step):
 
         match data.lower():
             case "да":
+                self.admin.send_answer("123")
+                self.admin.generateMethod(self.method_name, self.dump_data)
+                self.admin.send_answer("123")
                 self.reload()
                 return
             case "нет":
