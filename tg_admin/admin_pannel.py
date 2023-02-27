@@ -86,7 +86,7 @@ class TgAdmin():
     def generateMethod(self, method_name, data):
         print("---GENERATE_METHOD---")
         self.send_answer("---GENERATE_METHOD---")
-        self.send_answer(f"{method_name = }\n{data = }")
+        # self.send_answer(f"{method_name = }\n{data = }")
         print(f"{method_name = }\n{data = }")
         print("---GENERATE_METHOD---")
         match method_name:
