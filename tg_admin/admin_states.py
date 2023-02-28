@@ -415,6 +415,7 @@ class State:
 
         self.admin = admin
         self.admin.send_answer(self.message)
+        dump_data = {}
         self.steps = [
             step["method"](
                 self,
