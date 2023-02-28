@@ -7,7 +7,8 @@ from .admin_states import   CreateEvent, EditEvent, DeleteEvent, \
 
 from test import \
     createEvent, createPhotoReport, createPhoto, createCategory, createDish, \
-    editEvent, editCategory, editDish, editPhotoReport
+    editEvent, editCategory, editDish, editPhotoReport, \
+    deleteEvent, deleteCategory, deleteDish, deletePhotoReport
 
 class TgAdmin():
     name = "Lextor"
@@ -196,19 +197,27 @@ class TgAdmin():
 
             case "DeleteEvent":
                 with app.app_context():
-                    ...
+                    deleteEvent(
+                        id = data.get('id'),
+                    )
                 return
             case "DeleteCategory":
                 with app.app_context():
-                    ...
+                     deleteCategory(
+                        id = data.get('id'),
+                    )
                 return
             case "DeleteDish":
                 with app.app_context():
-                    ...
+                    deleteDish(
+                        id = data.get('id'),
+                    )
                 return
             case "DeletePhotoReport":
                 with app.app_context():
-                    ...
+                    deletePhotoReport(
+                        id = data.get('id'),
+                    )
                 return
             
             

@@ -289,7 +289,7 @@ def editCategory(category_id, title = None, image = None):
 
 def editDish(dish_id, title = None, ingredients = None, portion = None, price = None):
     dish = MenuDish.findById(dish_id)
-    
+
     if title:
         dish.title = title
         db.session.commit()
@@ -327,6 +327,28 @@ def editPhotoReport(photo_report_id, title = None, date = None, image = None):
         db.session.commit()
 
     return {"errors": False}
+
+
+def deleteEvent(id):
+    event = Event.findById(id)
+    db.session.delete(event)
+    db.session.commit()
+
+def deleteCategory(id):
+    category = MenuCategory.findById(id)
+    db.session.delete(category)
+    db.session.commit()
+
+def deleteDish(id):
+    dish = MenuDish.findById(id)
+    db.session.delete(dish)
+    db.session.commit()
+
+def deletePhotoReport(id):
+    photo_report = PhotoReport.findById(id)
+    db.session.delete(photo_report)
+    db.session.commit()
+
 
 
 def getEventInfos(id):
