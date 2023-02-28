@@ -287,17 +287,15 @@ def editCategory(category_id, title = None, image = None):
 
     return {"errors": False}
 
-def editDish(dish_id, title = None, description = None, portion = None, price = None):
+def editDish(dish_id, title = None, ingredients = None, portion = None, price = None):
     dish = MenuDish.findById(dish_id)
-
-    bot.send_message(chat_id="5693374811",text=f"{description}")
-
+    
     if title:
         dish.title = title
         db.session.commit()
 
-    if description:
-        dish.description = description
+    if ingredients:
+        dish.ingredients = ingredients
         db.session.commit()
 
     if portion:
