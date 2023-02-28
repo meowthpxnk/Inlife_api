@@ -94,7 +94,7 @@ class TgAdmin():
             self.send_answer(f"{e}")
         
         try:
-            self.send_answer(f"{data = }")
+            self.send_answer(f"{str(data)}")
         except Exception as e:
             self.send_answer(f"{e}")
 
