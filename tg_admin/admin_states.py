@@ -183,7 +183,7 @@ class EditCategoryStep(Step):
 
     def reload(self):
         self.state.steps.append(
-            EditCatgoryStep(
+            EditCategoryStep(
                 self.state,
                 self.admin,
                 message = StepMessages.text_edit_category_method,
