@@ -266,7 +266,7 @@ def editEvent(event_id, title = None, description = None, image = None, date = N
         db.session.commit()
 
     if date:
-        event.date = date
+        event.date = parseDate(date)
         db.session.commit()
 
     return {"errors": False}
@@ -316,7 +316,7 @@ def editPhotoReport(photo_report_id, title = None, date = None, image = None):
         db.session.commit()
 
     if date:
-        photo_report.date = date
+        photo_report.date = parseDate(date)
         db.session.commit()
 
     if image:
