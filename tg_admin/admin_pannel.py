@@ -152,7 +152,6 @@ class TgAdmin():
                 return
 
 
-
             case "EditEvent":
                 with app.app_context():
                     editEvent(
