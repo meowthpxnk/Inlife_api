@@ -155,17 +155,61 @@ class TgAdmin():
 
             case "EditEvent":
                 with app.app_context():
-                    print(data)
-                    # dish = createDish(
-                    #     title = data["title"],
-                    #     price = data["price"],
-                    #     portion = data["portion"],
-                    #     ingredients = data['ingredients'],
-                    #     category_id = data['category_id']
-                    # )
-                    #
-                    # print(dish)
+                    editEvent(
+                        event_id = data.get('id'),
+                        title = data.get('title'),
+                        description = data.get('description'),
+                        image = data.get('photo'),
+                        date = data.get('date')
+                    )
                 return
+            case "EditCategory":
+                with app.app_context():
+                    editCategory(
+                        category_id = data.get('id'),
+                        title = data.get('title'),
+                        image = data.get('photo')
+                    )
+                return
+            case "EditDish":
+                with app.app_context():
+                    editDish(
+                        dish_id = data.get('dish_id'),
+                        title = data.get('title'), 
+                        description = data.get('description'), 
+                        portion = data.get('portion'), 
+                        price = data.get('price')
+                    )
+                return
+            case "EditPhotoReport":
+                with app.app_context():
+                    editPhotoReport(
+                        photo_report_id = data.get('id'),
+                        title = data.get('title'), 
+                        date = data.get('date'), 
+                        image = data.get('photo')
+                    )
+                return
+            
+
+            case "DeleteEvent":
+                with app.app_context():
+                    ...
+                return
+            case "DeleteCategory":
+                with app.app_context():
+                    ...
+                return
+            case "DeleteDish":
+                with app.app_context():
+                    ...
+                return
+            case "DeletePhotoReport":
+                with app.app_context():
+                    ...
+                return
+            
+            
             case _:
                 return
 
