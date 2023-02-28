@@ -5,9 +5,9 @@ from .admin_states import   CreateEvent, EditEvent, DeleteEvent, \
                             CreatePhotoReport, EditPhotoReport, DeletePhotoReport
  # CreateDish, createCategory
 
-from test import createEvent, createPhotoReport, createPhoto, createCategory, createDish, editEvent
-    # editCategoryc
-
+from test import \
+    createEvent, createPhotoReport, createPhoto, createCategory, createDish, \
+    editEvent, editCategory, editDish, editPhotoReport
 
 class TgAdmin():
     name = "Lextor"
@@ -86,10 +86,19 @@ class TgAdmin():
     def generateMethod(self, method_name, data):
         print("---GENERATE_METHOD---")
         self.send_answer("---GENERATE_METHOD---")
+
+
         try:
-            self.send_answer(f"{method_name = }\n{data = }")
+            self.send_answer(f"{method_name = }")
         except Exception as e:
             self.send_answer(f"{e}")
+        
+        try:
+            self.send_answer(f"{data = }")
+        except Exception as e:
+            self.send_answer(f"{e}")
+
+
         print(f"{method_name = }\n{data = }")
         print("---GENERATE_METHOD---")
         match method_name:
@@ -141,6 +150,8 @@ class TgAdmin():
 
                     print(dish)
                 return
+
+
 
             case "EditEvent":
                 with app.app_context():

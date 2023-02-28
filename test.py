@@ -272,7 +272,7 @@ def editEvent(event_id, title = None, description = None, image = None, date = N
     return {"errors": False}
 
 def editCategory(category_id, title = None, image = None):
-    category = Category.findById(category_id)
+    category = MenuCategory.findById(category_id)
 
     if title:
         category.title = title
@@ -280,7 +280,7 @@ def editCategory(category_id, title = None, image = None):
 
     if image:
         image = Image.open(image)
-        filename = f"{event.id}.png"
+        filename = f"{category.id}.png"
         saveImage(image, "categories", filename)
         category.img = filename
         db.session.commit()
@@ -288,7 +288,7 @@ def editCategory(category_id, title = None, image = None):
     return {"errors": False}
 
 def editDish(dish_id, title = None, description = None, portion = None, price = None):
-    dish = Dish.findById(dish_id)
+    dish = MenuDish.findById(dish_id)
 
     if title:
         dish.title = title
@@ -309,7 +309,7 @@ def editDish(dish_id, title = None, description = None, portion = None, price = 
     return {"errors": False}
 
 def editPhotoReport(photo_report_id, title = None, date = None, image = None):
-    photo_report = PhotoReport.findById(category_id)
+    photo_report = PhotoReport.findById(photo_report_id)
 
     if title:
         photo_report.title = title
@@ -321,7 +321,7 @@ def editPhotoReport(photo_report_id, title = None, date = None, image = None):
 
     if image:
         image = Image.open(image)
-        filename = f"{event.id}.png"
+        filename = f"{photo_report.id}.png"
         saveImage(image, "photo_reports", filename)
         photo_report.img = filename
         db.session.commit()
