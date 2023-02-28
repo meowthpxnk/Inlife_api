@@ -854,7 +854,7 @@ class DeleteOrNot(Step):
             case "да":
                 return
             case "нет":
-                return
+                self.state.exit()
             case _:
                 raise Exception
 
