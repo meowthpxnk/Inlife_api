@@ -473,6 +473,7 @@ class State:
         # main_func = self.main_func
         self.admin.generateMethod(self.method_name, self.dump_data)
         self.admin.send_answer(f"Finish")
+        self.dump_data = {}
         self.admin.finish_state()
 
 class CreateState(State):
