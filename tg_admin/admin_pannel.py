@@ -175,7 +175,7 @@ class TgAdmin():
                     editDish(
                         dish_id = data.get('id'),
                         title = data.get('title'), 
-                        description = data.get('description'), 
+                        ingredients = data.get('description'), 
                         portion = data.get('portion'), 
                         price = data.get('price')
                     )
