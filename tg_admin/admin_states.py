@@ -849,9 +849,6 @@ class DeleteOrNot(Step):
 
     def parse_data(self, data, content_type = None):
         self.data = data
-
-        self.admin.send_answer(data.lower())
-
         match data.lower():
             case "да":
                 return

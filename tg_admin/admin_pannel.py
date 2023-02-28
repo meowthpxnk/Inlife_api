@@ -197,27 +197,31 @@ class TgAdmin():
 
             case "DeleteEvent":
                 with app.app_context():
-                    deleteEvent(
-                        id = data.get('id'),
-                    )
+                    if data.get("ok").lower() != 'нет':
+                        deleteEvent(
+                            id = data.get('id'),
+                        )
                 return
             case "DeleteCategory":
                 with app.app_context():
-                     deleteCategory(
-                        id = data.get('id'),
-                    )
+                    if data.get("ok").lower() != 'нет':
+                        deleteCategory(
+                            id = data.get('id'),
+                        )
                 return
             case "DeleteDish":
                 with app.app_context():
-                    deleteDish(
-                        id = data.get('id'),
-                    )
+                    if data.get("ok").lower() != 'нет':
+                        deleteDish(
+                            id = data.get('id'),
+                        )
                 return
             case "DeletePhotoReport":
                 with app.app_context():
-                    deletePhotoReport(
-                        id = data.get('id'),
-                    )
+                    if data.get("ok").lower() != 'нет':
+                        deletePhotoReport(
+                            id = data.get('id'),
+                        )
                 return
             
             
