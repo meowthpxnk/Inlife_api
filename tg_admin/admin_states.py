@@ -643,7 +643,7 @@ class EditDish(EditState):
             "message": StepMessages.text_edit_dish_id,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
-            "name": "dish_id"
+            "name": "id"
         },
         {
             "method": EditDishStep,
@@ -833,7 +833,7 @@ class EditPhotoReport(EditState):
             "message": StepMessages.text_edit_photo_report_id,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
-            "name": "dish_id"
+            "name": "id"
         },
         {
             "method": EditPhotoReportStep,

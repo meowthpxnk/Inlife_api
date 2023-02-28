@@ -173,7 +173,7 @@ class TgAdmin():
             case "EditDish":
                 with app.app_context():
                     editDish(
-                        dish_id = data.get('dish_id'),
+                        dish_id = data.get('id'),
                         title = data.get('title'), 
                         description = data.get('description'), 
                         portion = data.get('portion'), 
