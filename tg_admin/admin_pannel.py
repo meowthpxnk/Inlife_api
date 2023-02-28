@@ -182,12 +182,15 @@ class TgAdmin():
                 return
             case "EditPhotoReport":
                 with app.app_context():
-                    editPhotoReport(
-                        photo_report_id = data.get('id'),
-                        title = data.get('title'), 
-                        date = data.get('date'), 
-                        image = data.get('photo')
-                    )
+                    try:
+                        editPhotoReport(
+                            photo_report_id = data.get('id'),
+                            title = data.get('title'), 
+                            date = data.get('date'), 
+                            image = data.get('photo')
+                        )
+                    except Exception as e:
+                        self.send_answer(f"{e}")
                 return
             
 
