@@ -2,7 +2,7 @@ from app.models import Event, MenuCategory, MenuDish, PhotoReport, Photo
 from app import db
 from app import app, bot
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import requests
 
@@ -368,7 +368,8 @@ def getPhotoReportInfos(id):
 
 
 def getEvents():
-    return [event.info() for event in Event.allItems()]
+    events = db.session.query(Event).filter(Event.date > (datetime.now() - timedelta(days=1))).all()
+    return [event.info() for event in events]
 
 def getCategories():
     return [category.info() for category in MenuCategory.allItems()]
