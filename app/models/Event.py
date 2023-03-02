@@ -17,7 +17,7 @@ class Event(db.Model):
         return {
             "id": self.id,
             "title": self.title,
-            # "date": self.date,
+            "date_time": self.date,
             "date": "12 ОКТ",
             "img": self.img,
         }
@@ -26,7 +26,7 @@ class Event(db.Model):
         return {
             "id": self.id,
             "title": self.title,
-            # "date": self.date,
+            "date_time": self.date,
             "date": "12 октября",
             "img": self.img,
             "description": self.description,
