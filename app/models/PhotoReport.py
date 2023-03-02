@@ -18,14 +18,14 @@ class PhotoReport(db.Model):
             "id": self.id,
             "title": self.title,
             "img": self.img,
-            # "date": self.date,
+            "date_time": self.date,
             "date": "12.04.2022",
             "photos_quantity": len(self.photos),
         }
 
     def getFullInfo(self):
         return {
-            # "date": self.date,
+            "date_time": self.date,
             "date": "12/02/12",
             "title": self.title,
             "photos": [{"img": photo.img} for photo in self.photos],
