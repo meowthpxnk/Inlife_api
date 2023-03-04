@@ -35,6 +35,6 @@ def getMenuDishes():
     return {"ok": True, "data": getMenuDishess()}
 
 @app.route('/getMenuDishesSecond', methods=['GET'])
-def getMenuDishes():
+def getMenuDishesSecond():
     # time.sleep(3)
     return {"ok": True, "data": getMenuDishessSecond()}
