@@ -29,6 +29,8 @@ app_ctx.push()
 db = SQLAlchemy(app)
 
 Migrate(app, db)
+
+
 from app import views, models
 
 

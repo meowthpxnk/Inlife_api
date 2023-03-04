@@ -160,7 +160,7 @@ def createDishSecond(title, price, portion, ingredients, category_id):
     errors = []
 
     try:
-        category = MenuCategory.findById(category_id)
+        category = MenuDish.findById(category_id)
     except Exception as e:
         errors.append({
             "name": "category",
