@@ -2,11 +2,12 @@ from app import app, bot
 from .admin_states import   CreateEvent, EditEvent, DeleteEvent, \
                             CreateCategory, EditCategory, DeleteCategory, \
                             CreateDish, EditDish, DeleteDish, \
+                            CreateDishSecond, \
                             CreatePhotoReport, EditPhotoReport, DeletePhotoReport
  # CreateDish, createCategory
 
 from test import \
-    createEvent, createPhotoReport, createPhoto, createCategory, createDish, \
+    createEvent, createPhotoReport, createPhoto, createCategory, createDish, createDishSecond,\
     editEvent, editCategory, editDish, editPhotoReport, \
     deleteEvent, deleteCategory, deleteDish, deletePhotoReport
 
@@ -48,6 +49,9 @@ class TgAdmin():
 
     def createDish(self):
         self.state = CreateDish(self)
+    
+    def createDishSecond(self):
+        self.state = CreateDishSecond(self)
 
     def createCategory(self):
         self.state = CreateCategory(self)
@@ -151,7 +155,22 @@ class TgAdmin():
 
                     print(dish)
                 return
+            case "CreateDishSecond":
+                with app.app_context():
+                    try:
+                        dish = createDishSecond(
+                            title = data["title"],
+                            price = data["price"],
+                            portion = data["portion"],
+                            ingredients = data['description'],
+                            category_id = data['category_id']
+                        )
+                        # self.send_answer(dish)
+                    except Exception as e:
+                        self.send_answer(e)
 
+                    print(dish)
+                return
 
             case "EditEvent":
                 with app.app_context():

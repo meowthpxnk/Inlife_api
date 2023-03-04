@@ -584,6 +584,55 @@ class CreateDish(CreateState):
         },
     ]
 
+
+class CreateDishSecond(CreateState):
+    method_name = "CreateDish"
+    message = StateMessages.create_dish
+    required_steps = [
+        {
+            "method": GetNumber,
+            "message": StepMessages.text_create_dish_category_id,
+            "error_message": ErrorMessages.number,
+            "reply_markup": None,
+            "name": "category_id"
+        },
+        {
+            "method": GetText,
+            "message": StepMessages.text_dish_title,
+            "error_message": ErrorMessages.text,
+            "reply_markup": None,
+            "name": "title"
+        },
+        {
+            "method": GetText,
+            "message": StepMessages.text_dish_description,
+            "error_message": ErrorMessages.text,
+            "reply_markup": None,
+            "name": "description"
+        },
+        {
+            "method": GetText,
+            "message": StepMessages.text_dish_portion,
+            "error_message": ErrorMessages.text,
+            "reply_markup": None,
+            "name": "portion"
+        },
+        {
+            "method": GetNumber,
+            "message": StepMessages.text_dish_price,
+            "error_message": ErrorMessages.number,
+            "reply_markup": None,
+            "name": "price"
+        },
+        {
+            "method": OneMoreCreateDish,
+            "message": StepMessages.text_create_dish_one_more,
+            "error_message": ErrorMessages.one_more,
+            "reply_markup": yes_or_not_markup,
+            "name": "one_more"
+        },
+    ]
+
 class EditState(State):
     pass
 

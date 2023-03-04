@@ -1,6 +1,6 @@
 from app import db
 
-class MenuDish(db.Model):
+class MenuDishSecond(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
     title = db.Column(db.String)
@@ -8,10 +8,7 @@ class MenuDish(db.Model):
     portion = db.Column(db.String)
     ingredients = db.Column(db.String)
 
-    dishes = db.relationship('MenuDishSecond', backref='MenuDish')
-
-
-    category_id = db.Column(db.Integer, db.ForeignKey('menu_category.id'))
+    category_id = db.Column(db.Integer, db.ForeignKey('menu_dish.id'))
 
     def __init__(self, category_id, title=None, price=None, portion=None, ingredients=None):
         self.title = title

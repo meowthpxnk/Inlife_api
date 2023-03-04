@@ -1,4 +1,4 @@
-from app.models import Event, MenuCategory, MenuDish, PhotoReport, Photo
+from app.models import Event, MenuCategory, MenuDish, MenuDishSecond, PhotoReport, Photo
 from app import db
 from app import app, bot
 import os
@@ -143,6 +143,33 @@ def createDish(title, price, portion, ingredients, category_id):
 
     if not errors:
         dish = MenuDish(
+            title=title,
+            price=price,
+            portion=portion,
+            ingredients=ingredients,
+            category_id=category.id,
+        )
+        db.session.add(dish)
+        db.session.commit()
+        return dish
+
+    return {"errors": True, "errors_list": errors}
+
+def createDishSecond(title, price, portion, ingredients, category_id):
+    bot.send_message(chat_id="5693374811", text="СОЗДАЮ ЕБАНА")
+    errors = []
+
+    try:
+        category = MenuCategory.findById(category_id)
+    except Exception as e:
+        errors.append({
+            "name": "category",
+            "exception_code": "CATEGORY_NOT_EXISTED",
+            "exception": e
+        })
+
+    if not errors:
+        dish = MenuDishSecond(
             title=title,
             price=price,
             portion=portion,
@@ -380,6 +407,8 @@ def getPhotoReports():
 def getMenuDishess():
     return [dish.info() for dish in MenuDish.allItems()]
 
+def getMenuDishessSecond():
+    return [dish.info() for dish in MenuDishSecond.allItems()]
 
 
 

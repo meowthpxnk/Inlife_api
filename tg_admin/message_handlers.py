@@ -71,6 +71,15 @@ def create_dish_command(message):
     admin.createDish()
 
 
+@bot.message_handler(commands=['createDishSecond'])
+@admin_message_handler
+@is_admin_has_active_state
+def create_dish_command(message):
+    admin.createDishSecond()
+
+
+
+
 
 @bot.message_handler(commands=['editEvent'])
 @admin_message_handler
