@@ -128,7 +128,7 @@ def createCategory(title, image):
     db.session.commit()
     return {"errors": True, "errors_list": errors}
 
-def createDish(title, price, portion, ingredients, category_id):
+def createDish(title, category_id):
     bot.send_message(chat_id="5693374811", text="СОЗДАЮ ЕБАНА")
     errors = []
 
@@ -144,9 +144,9 @@ def createDish(title, price, portion, ingredients, category_id):
     if not errors:
         dish = MenuDish(
             title=title,
-            price=price,
-            portion=portion,
-            ingredients=ingredients,
+            # price=price,
+            # portion=portion,
+            # ingredients=ingredients,
             category_id=category.id,
         )
         db.session.add(dish)

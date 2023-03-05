@@ -554,27 +554,27 @@ class CreateDish(CreateState):
             "reply_markup": None,
             "name": "title"
         },
-        {
-            "method": GetText,
-            "message": StepMessages.text_dish_description,
-            "error_message": ErrorMessages.text,
-            "reply_markup": None,
-            "name": "description"
-        },
-        {
-            "method": GetText,
-            "message": StepMessages.text_dish_portion,
-            "error_message": ErrorMessages.text,
-            "reply_markup": None,
-            "name": "portion"
-        },
-        {
-            "method": GetNumber,
-            "message": StepMessages.text_dish_price,
-            "error_message": ErrorMessages.number,
-            "reply_markup": None,
-            "name": "price"
-        },
+        # {
+        #     "method": GetText,
+        #     "message": StepMessages.text_dish_description,
+        #     "error_message": ErrorMessages.text,
+        #     "reply_markup": None,
+        #     "name": "description"
+        # },
+        # {
+        #     "method": GetText,
+        #     "message": StepMessages.text_dish_portion,
+        #     "error_message": ErrorMessages.text,
+        #     "reply_markup": None,
+        #     "name": "portion"
+        # },
+        # {
+        #     "method": GetNumber,
+        #     "message": StepMessages.text_dish_price,
+        #     "error_message": ErrorMessages.number,
+        #     "reply_markup": None,
+        #     "name": "price"
+        # },
         {
             "method": OneMoreCreateDish,
             "message": StepMessages.text_create_dish_one_more,

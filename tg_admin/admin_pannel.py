@@ -144,9 +144,9 @@ class TgAdmin():
                     try:
                         dish = createDish(
                             title = data["title"],
-                            price = data["price"],
-                            portion = data["portion"],
-                            ingredients = data['description'],
+                            # price = data["price"],
+                            # portion = data["portion"],
+                            # ingredients = data['description'],
                             category_id = data['category_id']
                         )
                         # self.send_answer(dish)
