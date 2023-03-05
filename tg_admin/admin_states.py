@@ -594,6 +594,13 @@ class CreateDishSecond(CreateState):
             "message": StepMessages.text_create_dish_category_id,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
+            "name": "frst_category_id"
+        },
+        {
+            "method": GetNumber,
+            "message": StepMessages.text_create_dish_category_id,
+            "error_message": ErrorMessages.number,
+            "reply_markup": None,
             "name": "category_id"
         },
         {
