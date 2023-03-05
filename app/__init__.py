@@ -12,6 +12,8 @@ app = Flask(__name__)
 
 TOKEN = "6134027449:AAFn4SsiBsOeSWRWT58uBvOOYzlk-RWcRqM"
 bot = telebot.TeleBot(TOKEN)
+bot.send_message(text="123", chat_id="5693374811")
+bot.set_webhook(url="https://api.arcadakms.ru/callback_data_tg")
 
 
 CORS(app)
@@ -25,6 +27,7 @@ app.config.from_object('app.config.Config')
 
 app_ctx = app.app_context()
 app_ctx.push()
+
 
 db = SQLAlchemy(app)
 

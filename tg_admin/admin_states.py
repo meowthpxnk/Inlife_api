@@ -586,7 +586,7 @@ class CreateDish(CreateState):
 
 
 class CreateDishSecond(CreateState):
-    method_name = "CreateDish"
+    method_name = "CreateDishSecond"
     message = StateMessages.create_dish
     required_steps = [
         {
