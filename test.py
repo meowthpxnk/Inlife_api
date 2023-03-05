@@ -410,7 +410,19 @@ def getMenuDishess():
 def getMenuDishessSecond():
     return [dish.info() for dish in MenuDishSecond.allItems()]
 
+def getMenuDishesByCategoryID(id):
+    category = db.session.query(MenuCategory).filter(MenuCategory.id == id).first()
+    semi_categories = category.semi_categories
+    print(semi_categories)
 
+    data = []
+
+    for semi_category in semi_categories:
+        data.append({
+            "title": semi_category.title,
+            "dishes": [dish.info() for dish in semi_category.dishes]
+        })
+    return data
 
 # print(__name__)
 if __name__ == "__main__":

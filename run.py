@@ -1,8 +1,4 @@
-from app import app, db, bot
-
-from app.models import MenuDishSecond
-from test import createDishSecond, createDish
-import os
+from app import app, db
 
 if __name__ == '__main__':
     with app.app_context():

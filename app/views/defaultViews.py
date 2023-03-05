@@ -2,7 +2,7 @@ from app import app
 
 import time
 
-from test import getEvents, getEventInfos, getPhotoReports, getCategories, getPhotoReportInfos, getMenuDishess, getMenuDishessSecond
+from test import getEvents, getEventInfos, getPhotoReports, getCategories, getPhotoReportInfos, getMenuDishess, getMenuDishessSecond, getMenuDishesByCategoryID
 
 @app.route('/getInlifeInfo', methods=['GET'])
 def getInlifeInfo():
@@ -38,3 +38,8 @@ def getMenuDishes():
 def getMenuDishesSecond():
     # time.sleep(3)
     return {"ok": True, "data": getMenuDishessSecond()}
+
+@app.route('/getMenuDishesByCategory/<id>', methods=['GET'])
+def getMenuDishesByCategory(id):
+    # time.sleep(3)
+    return {"ok": True, "data": getMenuDishesByCategoryID(id)}

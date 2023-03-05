@@ -5,7 +5,7 @@ class MenuCategory(db.Model):
     img = db.Column(db.String)
     title = db.Column(db.String)
 
-    dishes = db.relationship('MenuDish', backref='MenuCategory')
+    semi_categories = db.relationship('MenuDish', backref='MenuCategory')
 
     def __init__(self, img=None, title=None):
         self.img = img
