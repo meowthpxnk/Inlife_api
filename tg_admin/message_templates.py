@@ -7,9 +7,8 @@ def photoReportsIDsMessage():
 
     for photo_report in photo_reports:
         message += f"{photo_report.get('id')}. {photo_report.get('title')}"
-    
 
-    return ...
+    return message
 
 help_message = "<b>Доступные команды: </b>\n\n\
 \
