@@ -441,13 +441,13 @@ def getEventItems():
     return db.session.query(Event).all()
 
 def getDishesItems():
-    return db.session.query(MenuDish).all()
+    return db.session.query(MenuDishSecond).all()
     
 def getCategoriesItems():
     return db.session.query(MenuCategory).all()
 
 def getSemiCategoriesItems():
-    return db.session.query(MenuDishSecond).all()
+    return db.session.query(MenuDish).all()
 
 def getPhotoReportsItems():
     return db.session.query(PhotoReport).all()
