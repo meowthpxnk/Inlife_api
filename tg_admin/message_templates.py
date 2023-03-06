@@ -4,16 +4,16 @@ def photoReportsIDsMessage():
     return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
 
 def eventsIDsMessage():
-    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
+    return "".join([f"{item.id}. {item.title}\n" for item in getEventItems()])
 
 def dishesIDsMessage():
-    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
+    return "".join([f"{item.id}. {item.title}\n" for item in getDishesItems()])
 
 def categoriesIDsMessage():
-    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
+    return "".join([f"{item.id}. {item.title}\n" for item in getCategoriesItems()])
 
 def semiCategoriesIDsMessage():
-    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
+    return "".join([f"{item.id}. {item.title}\n" for item in getSemiCategoriesItems()])
 
 help_message = "<b>Доступные команды: </b>\n\n\
 \

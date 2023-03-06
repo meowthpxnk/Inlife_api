@@ -591,6 +591,7 @@ class CreateDish(CreateState):
         {
             "method": GetNumber,
             "message": StepMessages.text_create_dish_category_id,
+            "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "category_id"
@@ -640,6 +641,7 @@ class CreateDishSecond(CreateState):
         {
             "method": GetNumber,
             "message": StepMessages.text_create_dish_category_id,
+            "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "frst_category_id"
@@ -647,6 +649,7 @@ class CreateDishSecond(CreateState):
         {
             "method": GetNumber,
             "message": StepMessages.text_create_dish_category_id,
+            "unique_message": semiCategoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "category_id"
@@ -698,6 +701,7 @@ class EditEvent(EditState):
         {
             "method": GetNumber,
             "message": StepMessages.text_edit_event_id,
+            "unique_message": eventsIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -718,6 +722,7 @@ class EditCategory(EditState):
         {
             "method": GetNumber,
             "message": StepMessages.text_edit_category_id,
+            "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -738,6 +743,7 @@ class EditDish(EditState):
         {
             "method": GetNumber,
             "message": StepMessages.text_edit_dish_category_id,
+            "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "category_id"
@@ -745,6 +751,7 @@ class EditDish(EditState):
         {
             "method": GetNumber,
             "message": StepMessages.text_edit_dish_id,
+            "unique_message": semiCategoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -765,6 +772,7 @@ class EditDishSecond(EditState):
         {
             "method": GetNumber,
             "message": StepMessages.text_edit_dish_category_id,
+            "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "category_id"
@@ -772,6 +780,7 @@ class EditDishSecond(EditState):
         {
             "method": GetNumber,
             "message": StepMessages.text_edit_dish_category_id,
+            "unique_message": semiCategoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "semi_category_id"
@@ -779,6 +788,7 @@ class EditDishSecond(EditState):
         {
             "method": GetNumber,
             "message": StepMessages.text_edit_dish_id,
+            "unique_message": dishesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -868,7 +878,7 @@ class CreatePhotoReport(CreateState):
         },
         {
             "method": GetDate,
-            "message": StepMessages.text_create_photo_report_date,
+            "message": StepMessages.text_event_date,
             "error_message": ErrorMessages.date,
             "reply_markup": None,
             "name": "date"
@@ -1005,6 +1015,7 @@ class DeleteEvent(State):
         {
             "method": GetNumber,
             "message": StepMessages.delete_event_id,
+            "unique_message": eventsIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -1025,6 +1036,7 @@ class DeleteCategory(State):
         {
             "method": GetNumber,
             "message": StepMessages.delete_category_id,
+            "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -1045,6 +1057,7 @@ class DeleteDish(State):
         {
             "method": GetNumber,
             "message": StepMessages.delete_dish_category_id,
+            "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "category_id"
@@ -1052,6 +1065,7 @@ class DeleteDish(State):
         {
             "method": GetNumber,
             "message": StepMessages.delete_dish_id,
+            "unique_message": semiCategoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -1072,6 +1086,7 @@ class DeleteDishSecond(State):
         {
             "method": GetNumber,
             "message": StepMessages.delete_dish_category_id,
+            "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "category_id"
@@ -1079,6 +1094,7 @@ class DeleteDishSecond(State):
         {
             "method": GetNumber,
             "message": StepMessages.delete_dish_category_id,
+            "unique_message": semiCategoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "semi_category_id"
@@ -1086,6 +1102,7 @@ class DeleteDishSecond(State):
         {
             "method": GetNumber,
             "message": StepMessages.delete_dish_id,
+            "unique_message": dishesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
