@@ -30,18 +30,13 @@ class Step:
         self.entity_type = entity_type
 
     def activate(self):
-        # if self.message:
-        #     self.admin.send_answer(self.message, reply_markup=self.reply_markup)
+        if self.message:
+            self.admin.send_answer(self.message, reply_markup=self.reply_markup)
         mess = ""
-        with app.app_context():
-            mess = self.unique_message()
-        try:
-            if self.unique_message:
-                self.admin.send_answer(mess)
-                self.admin.send_answer(mess)
-        except Exception as e:
-            self.admin.send_answer(e)
-        ...
+        if self.unique_message:
+            with app.app_context():
+                mess = self.unique_message()
+                self.admin.send_answer(mess)            
         
 
     def is_current_entity(self, entity_type):

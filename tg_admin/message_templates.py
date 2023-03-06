@@ -1,14 +1,7 @@
 from test import getPhotoReports
 
 def photoReportsIDsMessage():
-    message = f"Введите ID фотоотчета:\n\n"
-
-    photo_reports = getPhotoReports()
-
-    for photo_report in photo_reports:
-        message += f"{photo_report.get('id')}. {photo_report.get('title')}\n"
-
-    return message
+    return "".join([f"{photo_report.get('id')}. {photo_report.get('title')}\n" for photo_report in getPhotoReports()])
 
 help_message = "<b>Доступные команды: </b>\n\n\
 \
