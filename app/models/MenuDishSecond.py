@@ -24,7 +24,7 @@ class MenuDishSecond(db.Model):
             "price": self.price,
             "portion": self.portion,
             "ingredients": self.ingredients,
-            "category_id": self.category_id,
+            # "category_id": self.category_id,
         }
 
     @classmethod
