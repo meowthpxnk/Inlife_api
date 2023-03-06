@@ -45,7 +45,7 @@ def getMenuDishesByCategory(id):
         id = int(id)
         return {"ok": True, "data": getMenuDishesByCategoryID(id)}
     except Exception as e:
-        return {"ok": False, "error": e}
+        return {"ok": False, "error": f"{e}"}
     
     # return {"type": f"{type(id) == int}"}
     # try:
