@@ -32,9 +32,10 @@ class Step:
     def activate(self):
         # if self.message:
         #     self.admin.send_answer(self.message, reply_markup=self.reply_markup)
-        if self.unique_message:
-            self.admin.send_answer(self.unique_message)
-            self.admin.send_answer(self.unique_message)
+        # if self.unique_message:
+        #     self.admin.send_answer(self.unique_message)
+        #     self.admin.send_answer(self.unique_message)
+        ...
         
 
     def is_current_entity(self, entity_type):
