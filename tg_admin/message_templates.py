@@ -6,7 +6,7 @@ def photoReportsIDsMessage():
     photo_reports = getPhotoReports()
 
     for photo_report in photo_reports:
-        message += f"{photo_report.get('id')}. {photo_report.get('title')}"
+        message += f"{photo_report.get('id')}. {photo_report.get('title')}\n"
 
     return message
 

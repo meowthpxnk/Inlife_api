@@ -12,15 +12,17 @@ class Step:
     error_message = "step_error"
     entity_types = ["text"]
     name = "default"
+    unique_message = None
 
     data = None
     admin = None
     state = None
 
-    def __init__(self, state, admin, message, error_message, name, reply_markup = None, entity_type = None):
+    def __init__(self, state, admin, message, error_message, name, reply_markup = None, entity_type = None, unique_message = None):
         self.admin = admin
         self.state = state
         self.message = message
+        self.unique_message = unique_message
         self.error_message = error_message
         self.name = name
         self.reply_markup = reply_markup
@@ -30,6 +32,8 @@ class Step:
     def activate(self):
         if self.message:
             self.admin.send_answer(self.message, reply_markup=self.reply_markup)
+        if self.unique_message:
+            self.admin.send_answer(self.unique_message())
 
 
     def is_current_entity(self, entity_type):
@@ -462,6 +466,7 @@ class State:
                 self,
                 self.admin,
                 message = step["message"],
+                unique_message = step["unique_message"],
                 error_message = step["error_message"],
                 name = step["name"],
                 reply_markup = step["reply_markup"],
@@ -962,6 +967,7 @@ class EditPhotoReport(EditState):
             "method": GetNumber,
             # "message": StepMessages.text_edit_photo_report_id,
             "message": photoReportsIDsMessage(),
+            "unique_message": photoReportsIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
