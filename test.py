@@ -433,8 +433,30 @@ def getCategories():
 def getPhotoReports():
     return [photo_report.info() for photo_report in PhotoReport.allItems()]
 
+
+
+
+
+def getEventItems():
+    return db.session.query(Event).all()
+
+def getDishesItems():
+    return db.session.query(MenuDish).all()
+    
+def getCategoriesItems():
+    return db.session.query(MenuCategory).all()
+
+def getSemiCategoriesItems():
+    return db.session.query(MenuDishSecond).all()
+
 def getPhotoReportsItems():
     return db.session.query(PhotoReport).all()
+
+
+
+
+
+
 
 def getMenuDishess():
     return [dish.info() for dish in MenuDish.allItems()]

@@ -1106,6 +1106,7 @@ class DeletePhotoReport(State):
         {
             "method": GetNumber,
             "message": StepMessages.delete_photo_report_id,
+            "unique_message": photoReportsIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"

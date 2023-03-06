@@ -1,7 +1,19 @@
-from test import getPhotoReportsItems
+from test import getPhotoReportsItems, getEventItems, getDishesItems, getCategoriesItems, getSemiCategoriesItems
 
 def photoReportsIDsMessage():
-    return "".join([f"{photo_report.id}. {photo_report.title}\n" for photo_report in getPhotoReportsItems()])
+    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
+
+def eventsIDsMessage():
+    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
+
+def dishesIDsMessage():
+    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
+
+def categoriesIDsMessage():
+    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
+
+def semiCategoriesIDsMessage():
+    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
 
 help_message = "<b>Доступные команды: </b>\n\n\
 \
