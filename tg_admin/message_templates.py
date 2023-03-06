@@ -1,5 +1,15 @@
+from test import getPhotoReports
+
 def photoReportsIDsMessage():
-    return "asdiasd"
+    message = f"Введите ID фотоотчета:\n\n"
+
+    photo_reports = getPhotoReports()
+
+    for photo_report in photo_reports:
+        message += f"{photo_report.get('id')}. {photo_report.get('title')}"
+    
+
+    return ...
 
 help_message = "<b>Доступные команды: </b>\n\n\
 \
