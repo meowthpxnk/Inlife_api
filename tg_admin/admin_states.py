@@ -30,11 +30,12 @@ class Step:
         self.entity_type = entity_type
 
     def activate(self):
-        if self.message:
-            self.admin.send_answer(self.message, reply_markup=self.reply_markup)
+        # if self.message:
+        #     self.admin.send_answer(self.message, reply_markup=self.reply_markup)
         if self.unique_message:
             self.admin.send_answer(self.unique_message)
-
+            self.admin.send_answer(self.unique_message)
+        
 
     def is_current_entity(self, entity_type):
         return entity_type in self.entity_types
