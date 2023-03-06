@@ -13,16 +13,18 @@ class Step:
     entity_types = ["text"]
     name = "default"
     unique_message = None
+    unique_arg = None
 
     data = None
     admin = None
     state = None
 
-    def __init__(self, state, admin, message, error_message, name, reply_markup = None, entity_type = None, unique_message = None):
+    def __init__(self, state, admin, message, error_message, name, reply_markup = None, entity_type = None, unique_message = None, unique_arg = None):
         self.admin = admin
         self.state = state
         self.message = message
         self.unique_message = unique_message
+        self.unique_arg = unique_arg
         self.error_message = error_message
         self.name = name
         self.reply_markup = reply_markup
@@ -30,13 +32,22 @@ class Step:
         self.entity_type = entity_type
 
     def activate(self):
+        try:
+            self.admin.send_answer(self.state.dump_data)
+        except Exception as e:
+            self.admin.send_answer(e)
+
+        
         if self.message:
             self.admin.send_answer(self.message, reply_markup=self.reply_markup)
         mess = ""
         if self.unique_message:
             with app.app_context():
-                mess = self.unique_message()
-                self.admin.send_answer(mess)            
+                if self.unique_arg:
+                    self.admin.send_answer(self.unique_message())
+                else:
+                    self.admin.send_answer(self.unique_message())
+                    
         
 
     def is_current_entity(self, entity_type):
@@ -470,6 +481,7 @@ class State:
                 self.admin,
                 message = step.get("message"),
                 unique_message = step.get("unique_message"),
+                unique_arg = step.get("unique_arg"),
                 error_message = step.get("error_message"),
                 name = step.get("name"),
                 reply_markup = step.get("reply_markup"),
@@ -650,6 +662,7 @@ class CreateDishSecond(CreateState):
             "method": GetNumber,
             "message": StepMessages.text_create_dish_category_id,
             "unique_message": semiCategoriesIDsMessage,
+            "unique_arg": "frst_category_id",
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "category_id"
@@ -752,6 +765,7 @@ class EditDish(EditState):
             "method": GetNumber,
             "message": StepMessages.text_edit_dish_id,
             "unique_message": semiCategoriesIDsMessage,
+            "unique_arg": "category_id",
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -781,6 +795,7 @@ class EditDishSecond(EditState):
             "method": GetNumber,
             "message": StepMessages.text_edit_dish_category_id,
             "unique_message": semiCategoriesIDsMessage,
+            "unique_arg": "category_id",
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "semi_category_id"
@@ -789,6 +804,7 @@ class EditDishSecond(EditState):
             "method": GetNumber,
             "message": StepMessages.text_edit_dish_id,
             "unique_message": dishesIDsMessage,
+            "unique_arg": "semi_category_id",
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -1066,6 +1082,7 @@ class DeleteDish(State):
             "method": GetNumber,
             "message": StepMessages.delete_dish_id,
             "unique_message": semiCategoriesIDsMessage,
+            "unique_arg": "category_id",
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
@@ -1095,6 +1112,7 @@ class DeleteDishSecond(State):
             "method": GetNumber,
             "message": StepMessages.delete_dish_category_id,
             "unique_message": semiCategoriesIDsMessage,
+            "unique_arg": "category_id",
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "semi_category_id"
@@ -1103,6 +1121,7 @@ class DeleteDishSecond(State):
             "method": GetNumber,
             "message": StepMessages.delete_dish_id,
             "unique_message": dishesIDsMessage,
+            "unique_arg": "semi_category_idsemi_category_idsemi_category_idsemi_category_idsemi_category_id",
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"
