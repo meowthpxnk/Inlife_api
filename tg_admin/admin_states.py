@@ -1,4 +1,4 @@
-from app import bot
+from app import bot, app
 from datetime import datetime
 
 from .message_templates import *
@@ -32,15 +32,15 @@ class Step:
     def activate(self):
         # if self.message:
         #     self.admin.send_answer(self.message, reply_markup=self.reply_markup)
+        mess = ""
+        with app.app_context():
+            mess = self.unique_message()
         try:
             if self.unique_message:
-                self.admin.send_answer(self.unique_message())
-                self.admin.send_answer(self.unique_message())
+                self.admin.send_answer(mess)
+                self.admin.send_answer(mess)
         except Exception as e:
             self.admin.send_answer(e)
-        if self.unique_message:
-            self.admin.send_answer(self.unique_message())
-            self.admin.send_answer(self.unique_message())
         ...
         
 
