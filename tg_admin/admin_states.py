@@ -4,8 +4,6 @@ from datetime import datetime
 from .message_templates import *
 from .reply_markups import *
 
-
-
 import io
 from PIL import Image
 
@@ -962,7 +960,8 @@ class EditPhotoReport(EditState):
     required_steps = [
         {
             "method": GetNumber,
-            "message": StepMessages.text_edit_photo_report_id,
+            # "message": StepMessages.text_edit_photo_report_id,
+            "message": photoReportsIDsMessage(),
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "id"

@@ -1,3 +1,5 @@
+def photoReportsIDsMessage():
+    return "asdiasd"
 
 help_message = "<b>Доступные команды: </b>\n\n\
 \
