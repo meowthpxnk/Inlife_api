@@ -968,8 +968,8 @@ class EditPhotoReport(EditState):
     required_steps = [
         {
             "method": GetNumber,
-            # "message": StepMessages.text_edit_photo_report_id,
-            "message": photoReportsIDsMessage(),
+            "message": StepMessages.text_edit_photo_report_id,
+            # "message": photoReportsIDsMessage(),
             "unique_message": photoReportsIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,

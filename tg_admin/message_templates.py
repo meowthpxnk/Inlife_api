@@ -1,7 +1,7 @@
-from test import getPhotoReports
+from test import getPhotoReportsItems
 
 def photoReportsIDsMessage():
-    return "".join([f"{photo_report.get('id')}. {photo_report.get('title')}\n" for photo_report in getPhotoReports()])
+    return "".join([f"{photo_report.id}. {photo_report.title}\n" for photo_report in getPhotoReportsItems()])
 
 help_message = "<b>Доступные команды: </b>\n\n\
 \
