@@ -97,7 +97,7 @@ def create_dish_command(message):
 @admin_message_handler
 @is_admin_has_active_state
 def create_dish_command(message):
-    admin.editDishecond()
+    admin.editDishSecond()
 
 @bot.message_handler(commands=['editCategory'])
 @admin_message_handler
