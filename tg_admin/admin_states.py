@@ -345,6 +345,48 @@ class OneMoreCreateDish(Step):
             )
         )
         self.state.steps.append(
+            OneMoreCreateDish(
+                self.state,
+                self.admin,
+                message = StepMessages.text_create_dish_one_more,
+                error_message = ErrorMessages.one_more,
+                name = "one_more",
+                reply_markup = yes_or_not_markup,
+            )
+        ) 
+
+    def parse_data(self, data, content_type = None):
+        self.data = data
+
+
+        print(self.state.dump_data)
+
+        match data.lower():
+            case "да":
+                self.admin.generateMethod(self.state.method_name, self.state.dump_data)
+                self.reload()
+                return
+            case "нет":
+                return
+            case _:
+                raise Exception
+            
+
+class OneMoreCreateDishSecond(Step):
+    entity_types = ["text"]
+
+    def reload(self):
+        self.state.steps.append(
+            GetText(
+                self.state,
+                self.admin,
+                message = StepMessages.text_dish_title,
+                error_message = ErrorMessages.text,
+                name = "title",
+                reply_markup = None,
+            )
+        )
+        self.state.steps.append(
             GetText(
                 self.state,
                 self.admin,
@@ -375,7 +417,7 @@ class OneMoreCreateDish(Step):
             )
         )
         self.state.steps.append(
-            OneMoreCreateDish(
+            OneMoreCreateDishSecond(
                 self.state,
                 self.admin,
                 message = StepMessages.text_create_dish_one_more,
@@ -632,7 +674,7 @@ class CreateDishSecond(CreateState):
             "name": "price"
         },
         {
-            "method": OneMoreCreateDish,
+            "method": OneMoreCreateDishSecond,
             "message": StepMessages.text_create_dish_one_more,
             "error_message": ErrorMessages.one_more,
             "reply_markup": yes_or_not_markup,
@@ -693,6 +735,40 @@ class EditDish(EditState):
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "category_id"
+        },
+        {
+            "method": GetNumber,
+            "message": StepMessages.text_edit_dish_id,
+            "error_message": ErrorMessages.number,
+            "reply_markup": None,
+            "name": "id"
+        },
+        {
+            "method": EditDishStep,
+            "message": StepMessages.text_edit_dish_method,
+            "error_message": ErrorMessages.text,
+            "reply_markup": edit_dish_markup,
+            "name": "method"
+        },
+    ]
+
+class EditDishSecond(EditState):
+    method_name = "EditDishSecond"
+    message = StateMessages.edit_dish
+    required_steps = [
+        {
+            "method": GetNumber,
+            "message": StepMessages.text_edit_dish_category_id,
+            "error_message": ErrorMessages.number,
+            "reply_markup": None,
+            "name": "category_id"
+        },
+        {
+            "method": GetNumber,
+            "message": StepMessages.text_edit_dish_category_id,
+            "error_message": ErrorMessages.number,
+            "reply_markup": None,
+            "name": "semi_category_id"
         },
         {
             "method": GetNumber,
@@ -964,6 +1040,40 @@ class DeleteDish(State):
             "error_message": ErrorMessages.number,
             "reply_markup": None,
             "name": "category_id"
+        },
+        {
+            "method": GetNumber,
+            "message": StepMessages.delete_dish_id,
+            "error_message": ErrorMessages.number,
+            "reply_markup": None,
+            "name": "id"
+        },
+        {
+            "method": DeleteOrNot,
+            "message": StepMessages.realy_delete,
+            "error_message": ErrorMessages.yes_or_not,
+            "reply_markup": yes_or_not_markup,
+            "name": "ok"
+        },
+    ]
+
+class DeleteDishSecond(State):
+    method_name = "DeleteDishSecond"
+    message = StateMessages.delete_dish
+    required_steps = [
+        {
+            "method": GetNumber,
+            "message": StepMessages.delete_dish_category_id,
+            "error_message": ErrorMessages.number,
+            "reply_markup": None,
+            "name": "category_id"
+        },
+        {
+            "method": GetNumber,
+            "message": StepMessages.delete_dish_category_id,
+            "error_message": ErrorMessages.number,
+            "reply_markup": None,
+            "name": "semi_category_id"
         },
         {
             "method": GetNumber,

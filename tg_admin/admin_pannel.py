@@ -2,13 +2,13 @@ from app import app, bot
 from .admin_states import   CreateEvent, EditEvent, DeleteEvent, \
                             CreateCategory, EditCategory, DeleteCategory, \
                             CreateDish, EditDish, DeleteDish, \
-                            CreateDishSecond, \
+                            CreateDishSecond, EditDishSecond, DeleteDishSecond,\
                             CreatePhotoReport, EditPhotoReport, DeletePhotoReport
  # CreateDish, createCategory
 
 from test import \
     createEvent, createPhotoReport, createPhoto, createCategory, createDish, createDishSecond,\
-    editEvent, editCategory, editDish, editPhotoReport, \
+    editEvent, editCategory, editDish, editPhotoReport, editDishSecond, deleteDishSecond, \
     deleteEvent, deleteCategory, deleteDish, deletePhotoReport
 
 class TgAdmin():
@@ -69,6 +69,9 @@ class TgAdmin():
 
     def editDish(self):
         self.state = EditDish(self)
+    
+    def editDishSecond(self):
+        self.state = EditDishSecond(self)
 
     def editPhotoReport(self):
         self.state = EditPhotoReport(self)
@@ -83,6 +86,9 @@ class TgAdmin():
 
     def deleteDish(self):
         self.state = DeleteDish(self)
+    
+    def deleteDishSecond(self):
+        self.state = DeleteDishSecond(self)
 
     def deletePhotoReport(self):
         self.state = DeletePhotoReport(self)
@@ -195,6 +201,13 @@ class TgAdmin():
                     editDish(
                         dish_id = data.get('id'),
                         title = data.get('title'), 
+                    )
+                return
+            case "EditDishSecond":
+                with app.app_context():
+                    editDishSecond(
+                        dish_id = data.get('id'),
+                        title = data.get('title'), 
                         ingredients = data.get('description'), 
                         portion = data.get('portion'), 
                         price = data.get('price')
@@ -232,6 +245,13 @@ class TgAdmin():
                 with app.app_context():
                     if data.get("ok").lower() != 'нет':
                         deleteDish(
+                            id = data.get('id'),
+                        )
+                return
+            case "DeleteDishSecond":
+                with app.app_context():
+                    if data.get("ok").lower() != 'нет':
+                        deleteDishSecond(
                             id = data.get('id'),
                         )
                 return

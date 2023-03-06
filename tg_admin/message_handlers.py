@@ -64,14 +64,14 @@ def create_category_command(message):
 def create_dish_command(message):
     admin.createPhotoReport()
 
-@bot.message_handler(commands=['createDish'])
+@bot.message_handler(commands=['createSemiCategory'])
 @admin_message_handler
 @is_admin_has_active_state
 def create_dish_command(message):
     admin.createDish()
 
 
-@bot.message_handler(commands=['createDishSecond'])
+@bot.message_handler(commands=['createDish'])
 @admin_message_handler
 @is_admin_has_active_state
 def create_dish_command(message):
@@ -87,11 +87,17 @@ def create_dish_command(message):
 def create_dish_command(message):
     admin.editEvent()
 
-@bot.message_handler(commands=['editDish'])
+@bot.message_handler(commands=['editSemiCategory'])
 @admin_message_handler
 @is_admin_has_active_state
 def create_dish_command(message):
     admin.editDish()
+
+@bot.message_handler(commands=['editDish'])
+@admin_message_handler
+@is_admin_has_active_state
+def create_dish_command(message):
+    admin.editDishecond()
 
 @bot.message_handler(commands=['editCategory'])
 @admin_message_handler
@@ -120,11 +126,17 @@ def create_dish_command(message):
 def create_dish_command(message):
     admin.deleteCategory()
 
-@bot.message_handler(commands=['deleteDish'])
+@bot.message_handler(commands=['deleteSemiCategory'])
 @admin_message_handler
 @is_admin_has_active_state
 def create_dish_command(message):
     admin.deleteDish()
+
+@bot.message_handler(commands=['deleteDish'])
+@admin_message_handler
+@is_admin_has_active_state
+def create_dish_command(message):
+    admin.deleteDishSecond()
 
 @bot.message_handler(commands=['deletePhotoReport'])
 @admin_message_handler
