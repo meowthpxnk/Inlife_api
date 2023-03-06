@@ -33,7 +33,7 @@ class Step:
 
     def activate(self):
         try:
-            self.admin.send_answer(self.state.dump_data)
+            self.admin.send_answer(f"Data: {self.state.dump_data}")
         except Exception as e:
             self.admin.send_answer(e)
 
