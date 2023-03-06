@@ -465,11 +465,11 @@ class State:
             step["method"](
                 self,
                 self.admin,
-                message = step["message"],
-                unique_message = step["unique_message"],
-                error_message = step["error_message"],
-                name = step["name"],
-                reply_markup = step["reply_markup"],
+                message = step.get("message"),
+                unique_message = step.get("unique_message"),
+                error_message = step.get("error_message"),
+                name = step.get("name"),
+                reply_markup = step.get("reply_markup"),
             )
             for step
             in self.required_steps
