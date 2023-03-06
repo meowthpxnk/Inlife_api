@@ -41,11 +41,14 @@ def getMenuDishesSecond():
 
 @app.route('/getMenuDishesByCategory/<id>', methods=['GET'])
 def getMenuDishesByCategory(id):
-    return {"id": id}
+    # return {"id": id}
     try:
-        return {"ok": True, "data": getMenuDishesByCategoryID(id)}
+        data = getMenuDishesByCategoryID(id)
     except Exception as e:
         return {"ok": False, "error": e}
+    
+    return {"ok": True, "data": data}
+
     # if type(id) == 'int':
     # return {"ok": False}
     # time.sleep(3)
