@@ -44,7 +44,8 @@ class Step:
         if self.unique_message:
             with app.app_context():
                 if self.unique_arg:
-                    self.admin.send_answer(self.unique_message())
+                    arg = self.state.dump_data.get(self.unique_arg)
+                    self.admin.send_answer(self.unique_message(arg))
                 else:
                     self.admin.send_answer(self.unique_message())
                     

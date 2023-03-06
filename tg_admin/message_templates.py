@@ -1,19 +1,19 @@
 from test import getPhotoReportsItems, getEventItems, getDishesItems, getCategoriesItems, getSemiCategoriesItems
 
-def photoReportsIDsMessage():
-    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems()])
+def photoReportsIDsMessage(arg = None):
+    return "".join([f"{item.id}. {item.title}\n" for item in getPhotoReportsItems(arg)])
 
-def eventsIDsMessage():
-    return "".join([f"{item.id}. {item.title}\n" for item in getEventItems()])
+def eventsIDsMessage(arg = None):
+    return "".join([f"{item.id}. {item.title}\n" for item in getEventItems(arg)])
 
-def dishesIDsMessage():
-    return "".join([f"{item.id}. {item.title}\n" for item in getDishesItems()])
+def dishesIDsMessage(arg = None):
+    return "".join([f"{item.id}. {item.title}\n" for item in getDishesItems(arg)])
 
-def categoriesIDsMessage():
-    return "".join([f"{item.id}. {item.title}\n" for item in getCategoriesItems()])
+def categoriesIDsMessage(arg = None):
+    return "".join([f"{item.id}. {item.title}\n" for item in getCategoriesItems(arg)])
 
-def semiCategoriesIDsMessage():
-    return "".join([f"{item.id}. {item.title}\n" for item in getSemiCategoriesItems()])
+def semiCategoriesIDsMessage(arg = None):
+    return "".join([f"{item.id}. {item.title}\n" for item in getSemiCategoriesItems(arg)])
 
 help_message = "<b>Доступные команды: </b>\n\n\
 \

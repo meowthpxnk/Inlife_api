@@ -437,19 +437,23 @@ def getPhotoReports():
 
 
 
-def getEventItems():
+def getEventItems(arg):
     return db.session.query(Event).all()
 
-def getDishesItems():
+def getDishesItems(id = None):
+    if id:
+        return db.session.query(MenuDishSecond).filter(MenuDishSecond.category_id == id).all()
     return db.session.query(MenuDishSecond).all()
     
-def getCategoriesItems():
+def getCategoriesItems(id = None):
     return db.session.query(MenuCategory).all()
 
-def getSemiCategoriesItems():
+def getSemiCategoriesItems(id = None):
+    if id:
+        return db.session.query(MenuDish).filter(MenuDish.category_id == id).all()
     return db.session.query(MenuDish).all()
 
-def getPhotoReportsItems():
+def getPhotoReportsItems(arg):
     return db.session.query(PhotoReport).all()
 
 
