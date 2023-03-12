@@ -36,6 +36,11 @@ def admin_message_handler(func):
 def help_command(message):
     admin.send_answer(help_message)
 
+@bot.message_handler(commands=['manual'])
+@admin_message_handler
+def help_command(message):
+    admin.send_answer(manual_message)
+
 @bot.message_handler(commands=['start'])
 @admin_message_handler
 def start_command(message):

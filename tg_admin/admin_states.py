@@ -830,7 +830,7 @@ class UploadPhotoStep(Step):
             UploadPhotoStep(
                 self.state,
                 self.admin,
-                message = "None",
+                message = None,
                 error_message = ErrorMessages.photo,
                 name = "photos",
                 reply_markup = None,
