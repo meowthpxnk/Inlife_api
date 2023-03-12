@@ -129,7 +129,7 @@ def createCategory(title, image):
     return {"errors": True, "errors_list": errors}
 
 def createDish(title, category_id):
-    bot.send_message(chat_id="5693374811", text="СОЗДАЮ ЕБАНА")
+    # bot.send_message(chat_id="5693374811", text="СОЗДАЮ ЕБАНА")
     errors = []
 
     try:
@@ -156,7 +156,7 @@ def createDish(title, category_id):
     return {"errors": True, "errors_list": errors}
 
 def createDishSecond(title, price, portion, ingredients, category_id):
-    bot.send_message(chat_id="5693374811", text="СОЗДАЮ ЕБАНА")
+    # bot.send_message(chat_id="5693374811", text="СОЗДАЮ ЕБАНА")
     errors = []
 
     try:

@@ -110,8 +110,8 @@ class TgAdmin():
             self.send_answer(f"{e}")
 
 
-        print(f"{method_name = }\n{data = }")
-        print("---GENERATE_METHOD---")
+        # print(f"{method_name = }\n{data = }")
+        # print("---GENERATE_METHOD---")
         match method_name:
             case "CreateEvent":
                 with app.app_context():
