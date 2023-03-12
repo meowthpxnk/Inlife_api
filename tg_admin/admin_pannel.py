@@ -96,18 +96,18 @@ class TgAdmin():
 
     def generateMethod(self, method_name, data):
         print("---GENERATE_METHOD---")
-        self.send_answer("---GENERATE_METHOD---")
+        # self.send_answer("---GENERATE_METHOD---")
 
 
-        try:
-            self.send_answer(f"{method_name = }")
-        except Exception as e:
-            self.send_answer(f"{e}")
+        # try:
+        #     self.send_answer(f"{method_name = }")
+        # except Exception as e:
+        #     self.send_answer(f"{e}")
         
-        try:
-            self.send_answer(f"{str(data)}")
-        except Exception as e:
-            self.send_answer(f"{e}")
+        # try:
+        #     self.send_answer(f"{str(data)}")
+        # except Exception as e:
+        #     self.send_answer(f"{e}")
 
 
         # print(f"{method_name = }\n{data = }")
