@@ -32,10 +32,10 @@ class Step:
         self.entity_type = entity_type
 
     def activate(self):
-        try:
-            self.admin.send_answer(f"Data: {self.state.dump_data}")
-        except Exception as e:
-            self.admin.send_answer(e)
+        # try:
+        #     self.admin.send_answer(f"Data: {self.state.dump_data}")
+        # except Exception as e:
+        #     self.admin.send_answer(e)
 
         
         if self.message:
