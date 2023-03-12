@@ -603,7 +603,7 @@ class CreateDish(CreateState):
     required_steps = [
         {
             "method": GetNumber,
-            "message": StepMessages.text_create_dish_category_id,
+            "message": "Введите ID категории",
             "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
@@ -611,7 +611,7 @@ class CreateDish(CreateState):
         },
         {
             "method": GetText,
-            "message": StepMessages.text_dish_title,
+            "message": "Введите название подкатегории",
             "error_message": ErrorMessages.text,
             "reply_markup": None,
             "name": "title"
@@ -661,7 +661,7 @@ class CreateDishSecond(CreateState):
         },
         {
             "method": GetNumber,
-            "message": StepMessages.text_create_dish_category_id,
+            "message": "Введите ID подкатегории",
             "unique_message": semiCategoriesIDsMessage,
             "unique_arg": "frst_category_id",
             "error_message": ErrorMessages.number,
@@ -764,7 +764,7 @@ class EditDish(EditState):
         },
         {
             "method": GetNumber,
-            "message": StepMessages.text_edit_dish_id,
+            "message": "Введите ID подкатегории",
             "unique_message": semiCategoriesIDsMessage,
             "unique_arg": "category_id",
             "error_message": ErrorMessages.number,
@@ -794,7 +794,7 @@ class EditDishSecond(EditState):
         },
         {
             "method": GetNumber,
-            "message": StepMessages.text_edit_dish_category_id,
+            "message": "Введите ID подкатегории",
             "unique_message": semiCategoriesIDsMessage,
             "unique_arg": "category_id",
             "error_message": ErrorMessages.number,
@@ -1081,7 +1081,7 @@ class DeleteDish(State):
         },
         {
             "method": GetNumber,
-            "message": StepMessages.delete_dish_id,
+            "message": "Выберите ID подкатегории",
             "unique_message": semiCategoriesIDsMessage,
             "unique_arg": "category_id",
             "error_message": ErrorMessages.number,
@@ -1103,7 +1103,7 @@ class DeleteDishSecond(State):
     required_steps = [
         {
             "method": GetNumber,
-            "message": StepMessages.delete_dish_category_id,
+            "message": "Выберите ID категории",
             "unique_message": categoriesIDsMessage,
             "error_message": ErrorMessages.number,
             "reply_markup": None,
@@ -1111,7 +1111,7 @@ class DeleteDishSecond(State):
         },
         {
             "method": GetNumber,
-            "message": StepMessages.delete_dish_category_id,
+            "message": "Выберите ID подкатегории",
             "unique_message": semiCategoriesIDsMessage,
             "unique_arg": "category_id",
             "error_message": ErrorMessages.number,
